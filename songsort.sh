@@ -6,19 +6,11 @@ if [[ -z $1 ]]; then
 	exit 1
 fi
 
-
-
 for filename in "$inputDirectory"/*.mp3 
 	do
 	
 	songTitle=$(songrec audio-file-to-recognized-song "$filename"|python ~/Project/SongSorter/jsonParser.py)
-	
 	#resultJSON=$(songrec audio-file-to-recognized-song "$filename")
-	
-
-		
-	
-	
 	if [[ -z $songTitle ]]; then
 		if [ ! -d "Unknown^" ]; then
 			mkdir "Unknown^"
